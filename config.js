@@ -4,12 +4,7 @@ module.exports = {
     "port":3000,
 
     "site_info":{
-        
-        "general":{
-            "text-color":"#",
-            "bg_color":"FFFFff",
-            "font-size":""
-        }, 
+
         "home":{
             "bg_img":"desktopImg.jpg",
             "title":"Joshua Henry",
@@ -106,6 +101,10 @@ module.exports = {
                 {
                     "site_name":"linkedin",
                     "link":"https://www.linkedin.com/in/joshua-henry-8bb082b9"
+                },
+                {
+                    "site_name":"github",
+                    "link":"https://github.com/Jhen225"
                 }
                 
             ],

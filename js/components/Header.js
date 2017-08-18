@@ -5,7 +5,7 @@ export default class Header extends React.Component{
 
     render(){
         var heroStyle = {
-            backgroundImage: "url(/images/hero_images/" + this.props.bgImg
+            backgroundImage: "url(./images/hero_images/" + this.props.bgImg
         }
         return(
             <div className="hero-container" style={heroStyle}>

@@ -2,16 +2,14 @@ import React from 'react';
 import PortfolioItem from './portfolio-item.js'
 
 export default class Portfolio extends React.Component{
-
     render(){
 
-        var projects = [];
-        for(var i = 0; i< this.props.projects.length;i++){
-            projects.push(<PortfolioItem key={i} thumbnail={this.props.projects[i].thumbnail} title={this.props.projects[i].name}/>)
-        }
+        let projects = this.props.projects.map((project, i) => {
+            return <PortfolioItem key={i} thumbnail={project.thumbnail} title={project.name}/>
+        });
 
         return(
-            <section id="portfolio">
+            <section id="projects">
                 <div className="section-header">
                 <h2 className="header-text">Check Out My Work</h2>
                 </div>

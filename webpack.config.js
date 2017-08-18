@@ -7,7 +7,7 @@ module.exports = {
     entry:"./js/scripts.js",
     output:{
         path:__dirname + "/src/js",
-        filename:"scripts.min.js"
+        filename:"scripts.js"
     },
     devServer: { 
         inline: true

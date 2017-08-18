@@ -89,12 +89,6 @@ p,h2,h1{
     }
 }
 
-
-
-/*.navbar{
-  margin-right: 5%;
-  text-align: right;
-}*/
 .navbar{
   display: flex;
   height: 100%;
@@ -115,8 +109,9 @@ p,h2,h1{
   text-decoration: underline;
 }
 
-.active{
-  background: #111111;
+.active-navbar-item{
+  /*background: #111111;*/
+  text-decoration: underline;
 }
 
 .navbar-item:last-child{
@@ -132,62 +127,41 @@ p,h2,h1{
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: #2a2a2a;
+  background: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   z-index: 10;
 }
 
 .nav-menu{
-    width: 90vw;
-    height: 30vh;
-    border: 5px solid #272727;
-    background: #272727;
+    width: 100%;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     text-align: center;
 }
 
 .nav-menu-item{
-
+  width: 100%;
+  padding: 50px 0;
+  color: white;
   text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #303030;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-right: 5px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
-  -ms-flex-preferred-size: 0%;
-      flex-basis: 0%;
+  border-top: 1px solid #111;
 }
 
 .nav-menu-item:hover{
@@ -197,18 +171,7 @@ p,h2,h1{
 
 .nav-menu-item:last-child{
   margin-right: 0;
-}
-
-
-.nav-text{
-  margin-bottom: 15px;
-  color:#d9d9d9;
-  font-size: 1.5em;
-}
-
-.nav-message{
-  color:#DEA67E;
-  font-size: .7em;
+  border-bottom: 1px solid #111;
 }
 
 /*---End of Navigation Overlay---*/
@@ -461,26 +424,27 @@ section h2{
 }
 
 .thumbnail-unit{
+  position: relative;
   width: 50%;
   height: 375px;
   float: left;
-  position: relative; 
   cursor: pointer;  
   overflow: hidden;
-  transition: width 1s;
+  transition: 1s;
 }
 
 .thumbnail-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   width: 100%;
   height: 375px;
   background: #232323;
-  transform: translateY(100%);
-
-  opacity: .9;
+  opacity: 0;
   justify-content: center;
   align-items: center;
-  transition: 0.3s;
+  transition: 0.5s;
 
 }
 
@@ -490,8 +454,7 @@ section h2{
 }
 
 .thumbnail-unit:hover .thumbnail-overlay{
-
-  transform: translateY(-100%);
+  opacity: 1;
 }
 
 .thumbnail{
@@ -522,6 +485,7 @@ section h2{
   padding: 4% 6%;
   margin: 0 auto;
   position: relative;
+  min-height: 900px;
 }
 
 .client-carousel{
@@ -568,6 +532,7 @@ section h2{
   background: #ddd;
   border-radius:50%; 
   cursor: pointer;
+  /*transition: 0.5s;*/
 }
 
 .client-mobile-nav-icon::after{
@@ -600,8 +565,8 @@ section h2{
 
 #contact{
   
-  background: #000000;
-  padding: 10px;
+  /*background: #444;*/
+  padding: 25px 0 10px 0;
   overflow: auto;
 
   /*position: relative;*/
@@ -614,7 +579,60 @@ section h2{
   width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  padding: 0 50px;
+  justify-content: center;
+}
+
+.contact-form{
+  padding-right: 30px;
+  /*border-right: 1px solid darkgoldenrod;*/
+}
+
+.info-wrap{
+  margin-bottom: 10px;
+}
+
+.contact-form-info{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.contact-input{
+  height: 30px;
+  width: 450px;
+  outline: none;
+  border: 1px solid darkgoldenrod;
+}
+
+.contact-input:first-child{
+  margin-right: 2%;
+}
+
+.contact-message{
+  width: 450px;
+  height: 150px;
+  resize: none;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid darkgoldenrod;
+}
+
+.contact-input:focus{
+  border: 2px solid darkgoldenrod;
+}
+
+.contact-message:focus{
+  border: 2px solid darkgoldenrod;
+}
+
+.contact-btn{
+  width: 450px;
+  height: 30px;
+  background: darkgoldenrod;
+  border: 1px solid darkgoldenrod;
+  color: white;
 }
 
 .contact-email{
@@ -624,13 +642,17 @@ section h2{
   letter-spacing: 3px;
 }
 
+.contact-info{
+  padding-left: 30px;
+}
+
 .social-wrap{
 
 }
 
 .email{
   color: #fff;
-  font-size: 28px;
+  font-size: 20px;
   /*font-size: 5.7vw;*/
   text-decoration: none;
   
@@ -671,7 +693,7 @@ section h2{
     margin:0 auto;
     padding:0;
     list-style:none;
-    display:flex;
+    /*display:flex;*/
     left:0;
     justify-content: center;
 }
@@ -711,10 +733,10 @@ section h2{
     display:block;
     position: relative;
     z-index: 1;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 20px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -727,6 +749,10 @@ section h2{
 
 .soc-icon-last{
     margin:0 !important;
+}
+
+.soc-text{
+  color: white;
 }
 
 /*li > a:last-child{
@@ -1115,3 +1141,12 @@ body{
 
 }
 
+#main-footer{
+  background: #444;
+  text-align: center;
+  padding: 15px 0;
+}
+
+#main-footer > p{
+  color: white;
+}
